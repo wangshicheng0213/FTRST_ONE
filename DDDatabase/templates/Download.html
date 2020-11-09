@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+{% load  staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to DDKB</title>
+    <!-- 引入插件 -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default">
+    <!-- 用个div把他包起来，用来对齐 -->
+      <div class="container">
+          <!-- 用于存放我们网站的logo -->
+          <div class="navbar-header">
+              <a href="index.html" class="navbar-brand"></a>
+          </div>
+          <!-- 这里是list的意思 -->
+          <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav">
+              <ul class="nav navbar-nav">
+               <li><a href="/">Home</a></li>
+                <li><a href="/SearchGene/">GeneSearch</a></li>
+                <li><a href="/CoExAnalysis/">Co-expression</a></li>
+                <li><a href="/PPINetwork/">PPI Network</a></li>
+                <li><a href="/ExPaAnalysis/">Spatio-Temporal-Ex</a></li>
+                <li><a href="/Download/">Download</a></li>
+                <li><a href="/Manual/">Manual</a></li>
+              </ul>
+            </ul>
+          </ul>
+          <!--这里的navbar-right 是向右浮动的意思 -->
+          <!-- <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html">login</a></li>
+            <li><a href="signup.html">signup</a></li>
+          </ul> -->
+      </div>
+  </div>
+<div class="container">
+  <div class="body" style="font-size:80%">
+<br />
+<font style="color:#3572a7;font-size:200%;font-weight:bold;">Download</font>
+<hr />
+<ol type="A" id="download_introduction">
+  <li><a href="#snp">SNP data</a></li>
+  <li><a href="#gene">Gene data</a></li>
+  <li><a href="#coexpression">Co-expression data</a></li>
+  <li><a href="#eQTL">eQTL data</a></li>
+  <!-- <li><a href="#pascal"><I>Pascal</I> data</a></li> -->
+  <!--<li><a href="#score">Score data</a></li>-->
+  <li><a href="#ppi">PPI data</a></li>
+  <!-- <li><a href="#differential">Differential expression data</a></li> -->
+  <!-- <li><a href="#brainspan">BrainSpan expression pattern data</a></li> -->
+  <li><a href="#braincloud">BrainCloud expression pattern data</a></li>
+  <!-- <li><a href="#monozygotic">WGS data of monozygotic twins discordant for SCZ</a></li> -->
+  <!-- <li><a href="#reference">Reference</a></li> -->
+</ol>
+<div class="download">
+  <a name="snp"></a><h3>SNP data</h3>
+  <p class="manualtext" align="justify">
+  SNP data was downloaded from <a href="http://www.med.unc.edu" target="_blank">PGC2</a> which contains 9,444,230 SNPs.<sup>[1]</sup> The sample size included in the GWAS meta-analysis was
+  82,315, including 35,476 schizophrenia cases and 46,839 controls. RegulomeDB<sup>[2]</sup> score was introduced to annotate the SNPs. Non-synonymous (missense) variants were also annotated by
+  SIFT<sup>[3,4]</sup> and PolyPhen-2.<sup>[5]</sup> The total data can be downloaded from <a href="http://www.med.unc.edu/pgc/results-and-downloads" target="_blank"><strong>PGC2</strong></a>
+  </p>
+</div>
+<div class="download">
+  <a name="gene"></a><h3>Gene data</h3>
+  <p class="manualtext" align="justify">
+  Gene data was prioritized by the following items: (1) genes identified by GWAS;<sup>[6-23]</sup> (2)genes affected by CNVs;<sup>[24]</sup> (3)genes identified by linkage and association study;<sup>[25-27]</sup>
+  (4)genes identified by convergent functional genomics (CFG);<sup>[28]</sup> (5)genes identified by <I>Sherlock</I> integrative analysis;<sup>[29-30]</sup> (6)genes identified by <I>Pascal</I> gene based test;<sup>[31]</sup>
+  (7)genes expressed differentially in schizophrenia.<sup>[32-37]</sup>The prioritization of schizophrenia risk genes can be downloaded from <a href="file/gene/gene.txt" target="_blank"><strong>here</strong></a>
+  </p>
+</div>
+<div class="download">
+  <a name="coexpression"></a><h3>Co-expression data</h3>
+  <p class="manualtext" align="justify">
+  we performed gene co-expression analyses using RNA-seq-based expression data from the BrainSpan: Atlas of the Developing Human Brain (http://www.brainspan.org/).
+  BrainSpan atlas were divided into four anatomic regions and fifteen developmental stages as described in studies of Willsey et al.<sup>[38]</sup>
+  and Gilman et al.68 The four anatomic regions are: (1) V1C-STC cluster (V1C, ITC, IPC, A1C, and STC); (2) Prefrontal and primary motor-somatosensory cortex
+  or M1C-S1C cluster (M1C, S1C, VFC, MFC, DFC, and OFC); (3) STR-AMY cluster (STR, HIP, AMY); (4) MD-CBC cluster (MD and CBC). The fifteen developmental stages
+  are: (1) Embryonic, from 4 to 8 postconception weeks (PCW); (2) Early fetal, from 8 to 10 PCW; (3) Early fetal, from 10 to 13 PCW; (4) Early mid-fetal, from
+  13 to 16 PCW; (5) Early mid-fetal, from 16 to 19 PCW; (6) Late mid-fetal, from 19 to 24 PCW; (7) Late fetal, from 24 to 38 PCW; (8) Neonatal & early infancy,
+  from 0 to 6 months (M); (9) Late infancy from 6 to 12 M; (10) Early childhood, from 1 to 6 years (Y); (11) Middle and late childhood, from 6 to 12 Y;
+  (12) Adolescence, from 12 to 20 Y; (13) Young adulthood, from 20 to 40 Y; (14) Middle adulthood, from 40 to 60 Y; (15) Late adulthood, more than 60 years old.
+  Pearson correlation coefficients were calculated in each brain region across developmental stages as described previously.<sup>[38-39]</sup> Only gene pair whose Pearson
+  correlation coefficient equal or bigger than 0.8 were retained. The whole data can be downloaded from <a href="data/co_expression/coexpression.gz" target="_blank"><strong>here</strong></a>.
+  </p>
+</div>
+<div class="download">
+  <a name="eQTL"></a><h3>eQTL data</h3>
+  <p class="manualtext" align="justify">
+  We downloaded genome-wide expression and genotype data from the study of Myers et al., which included 193 neuropathologically normal human brain samples.<sup>[40]</sup>
+  The association between each SNP and transcript was assessed using PLINK,<sup>[41]</sup> as described in the study of Myers et al.<sup>[40]</sup> In total, we assessed correlations among
+  366,140 SNPs and the expression of 14,078 detected transcripts. Because the eQTL data is quite large, if users want to require it, please cantact us!
+  </p>
+</div>
+<!-- <div class="download">
+  <a name="pascal"></a><h3><I>Pascal</I> data</h3>
+  <p class="manualtext" align="justify">
+  Gene-based tests were performed for association by using <I>Pascal</I>.<sup>[31]</sup> SNP <I>P</I>-value data was downloaded from PGC2 as desciribed in "SNP data".
+  Pascal data can be downloaded from <a href="file/PASCAL/output/pascal.txt"><strong>here</strong></a>.
+  </p>
+</div> -->
+<div class="download">
+  <a name="ppi"></a><h3>PPI data</h3>
+  <p class="manualtext" align="justify">
+  We downloaded PPI data from <a href="http://www.broadinstitute.org/mpg/dapple/dappleTMP.php" target="_blank">InWeb</a>, a well-characterized PPI databased developed by Lage et al.<sup>[42,43]</sup>
+  </p>
+</div>
+<!-- <div class="download">
+  <a name="differential"></a><h3>Differential expression data</h3>
+  <p class="manualtext" align="justify">
+  We downloaded 5 microarray datasets (which used brain tissues from schizophrenia patients and controls) from gene expression omnibus (GEO)
+  including GSE53987 (contains three brain tissues: pre-frontal cortex, striatum and hippocampus; a total of 114 samples),<sup>[32]</sup>
+  GSE12649 (prefrontal cortex; a total of 69 postmortem brains samples),<sup>[33]</sup> GSE21138 (prefrontal cortex; a total of 59 postmortem
+  brains samples),<sup>[34]</sup> GSE35978 (cerebellum and parietal cortex brain; a total of 195 samples),<sup>[35]</sup> and GSE62191
+  (frontal cortex; a total of 59 samples).<sup>[36]</sup> We re-analyzed these microarray datasets and top 1 differentially expressed
+  genes in schizophrenia cases and controls were integrated into SZDB. In addition, differentially expressed genes identified by RNA
+  sequencing<sup>[37]</sup> were also integrated into SZDB. Differential expression data can be downloaded from <a href="data/differential/differential.zip" target="_blank"><strong>here</strong></a>
+  </p>
+</div> -->
+<!-- <div class="download">
+  <a name="brainspan"></a><h3>BrainSpan expression pattern data</h3>
+  <p class="manualtext" align="justify">
+  As desciribed in "Co-expression data", BrainSpan atlas were divided into four anatomic regions and fifteen developmental stages.
+  </p>
+</div> -->
+<div class="download">
+  <a name="braincloud"></a><h3>BrainCloud expression pattern data</h3>
+  <p class="manualtext" align="justify">
+  <a href="http://braincloud.jhmi.edu/" target="_blank">BrainCloud</a><sup>[44]</sup> PFC expression data was also divided into fifteen developmental stages, as described in "Co-expression data".
+  </p>
+</div>
+<div class="download">
+  <a name="monozygotic"></a><h3>WGS data of monozygotic twins discordant for SCZ</h3>
+  <p class="manualtext" align="justify">
+  <I>de novo</I> mutations data identified by whole-genome sequencing of monozygotic twins discordant for schizophrenia can be download from <a href="data/wgs/WGS_of_MZ_twins_discordant_for_schizophrenia_Supplementary_table_s4.xlsx" target="_blank"><strong>here</strong></a>. More details please refer to the original aricle Tang J, <I>et al</I>,. 2017. Journal of Genetics and Genomics<sup>[45]</sup>.
+  </p>
+</div>
+
+<div class="download">
+  <a name="reference"></a><h3>Reference</h3>
+  <p class="manualtext" align="justify">
+  <ol type="1" id="reference" align="justify">
+  <li>Schizophrenia Working Group of the Psychiatric Genomics Consortium*. Biological insights from 108 schizophrenia-associated genetic loci. Nature 2014; 511: 421-427.</li>
+  <li>Xie D, Boyle AP, Wu L, Zhai J, Kawli T, Snyder M. Dynamic trans-acting factor colocalization in human cells. Cell 2013; 155: 713-724.</li>
+  <li>Ng PC, Henikoff S. SIFT: Predicting amino acid changes that affect protein function. Nucleic Acids Res 2003; 31: 3812-3814.</li>
+  <li>Kumar P, Henikoff S, Ng PC. Predicting the effects of coding non-synonymous variants on protein function using the SIFT algorithm. Nat Protoc 2009; 4: 1073-1081.</li>
+  <li>Adzhubei IA, Schmidt S, Peshkin L, Ramensky VE, Gerasimova A, Bork P et al. A method and server for predicting damaging missense mutations. Nat Methods 2010; 7: 248-249.</li>
+  <li>O'Donovan MC, Craddock N, Norton N, Williams H, Peirce T, Moskvina V, et al. (2008): Identification of loci associated with schizophrenia by genome-wide association and follow-up. Nat Genet. 40:1053-1055.</li>
+  <li>Purcell SM, Wray NR, Stone JL, Visscher PM, O'Donovan MC, Sullivan PF, et al. (2009): Common polygenic variation contributes to risk of schizophrenia and bipolar disorder. Nature. 460:748-752.</li>
+  <li>Ripke S, O'Dushlaine C, Chambert K, Moran JL, Kahler AK, Akterin S, et al. (2013): Genome-wide association analysis identifies 13 new risk loci for schizophrenia. Nat Genet. 45:1150-1159.</li>
+  <li>Ikeda M, Aleksic B, Kinoshita Y, Okochi T, Kawashima K, Kushima I, et al. (2011): Genome-wide association study of schizophrenia in a Japanese population. Biol Psychiatry. 69:472-478.</li>
+  <li>Hamshere ML, Walters JT, Smith R, Richards AL, Green E, Grozeva D, et al. (2013): Genome-wide significant associations in schizophrenia to ITIH3/4, CACNA1C and SDCCAG8, and extensive replication of associations reported by the Schizophrenia PGC. Mol Psychiatry. 18:708-712.</li>
+  <li>Rietschel M, Mattheisen M, Degenhardt F, Muhleisen TW, Kirsch P, Esslinger C, et al. (2012): Association between genetic variation in a region on chromosome 11 and schizophrenia in large samples from Europe. Mol Psychiatry. 17:906-917.</li>
+  <li>Irish Schizophrenia Genomics Consortium & Wellcome Trust Case Control Consortium (2012): Genome-wide association study implicates HLA-C*01:02 as a risk factor at the major histocompatibility complex locus in schizophrenia. Biol Psychiatry. 72:620-628.</li>
+  <li>Shi J, Levinson DF, Duan J, Sanders AR, Zheng Y, Pe'er I, et al. (2009): Common variants on chromosome 6p22.1 are associated with schizophrenia. Nature. 460:753-757.</li>
+  <li>Shi Y, Li Z, Xu Q, Wang T, Li T, Shen J, et al. (2011): Common variants on 8p12 and 1q24.2 confer risk of schizophrenia. Nat Genet. 43:1224-1227.</li>
+  <li>Stefansson H, Ophoff RA, Steinberg S, Andreassen OA, Cichon S, Rujescu D, et al. (2009): Common variants conferring risk of schizophrenia. Nature. 460:744-747.</li>
+  <li>Li J, Zhou G, Ji W, Feng G, Zhao Q, Liu J, et al. (2011): Common variants in the BCL9 gene conferring risk of schizophrenia. Arch Gen Psychiatry. 68:232-240.</li>
+  <li>Steinberg S, de Jong S, Andreassen OA, Werge T, Borglum AD, Mors O, et al. (2011): Common variants at VRK2 and TCF4 conferring risk of schizophrenia. Hum Mol Genet. 20:4076-4081.</li>
+  <li>Wong EH, So HC, Li M, Wang Q, Butler AW, Paul B, et al. (2014): Common variants on Xq28 conferring risk of schizophrenia in Han Chinese. Schizophr Bull. 40:777-786.</li>
+  <li>Yue WH, Wang HF, Sun LD, Tang FL, Liu ZH, Zhang HX, et al. (2011): Genome-wide association study identifies a susceptibility locus for schizophrenia in Han Chinese at 11p11.2. Nat Genet. 43:1228-1231.</li>
+  <li>Lencz T, Guha S, Liu C, Rosenfeld J, Mukherjee S, DeRosse P, et al. (2013): Genome-wide association study implicates NDST3 in schizophrenia and bipolar disorder. Nat Commun. 4:2739.</li>
+  <li>Schizophrenia Working Group of the Psychiatric Genomics Consortium* (2014): Biological insights from 108 schizophrenia-associated genetic loci. Nature. 511:421-427.</li>
+  <li>Stefansson H, Rujescu D, Cichon S, Pietilainen OP, Ingason A, Steinberg S, et al. (2008): Large recurrent microdeletions associated with schizophrenia. Nature. 455:232-236.</li>
+  <li>The International Schizophrenia Consortium (2008): Rare chromosomal deletions and duplications increase risk of schizophrenia. Nature. 455:237-241.</li>
+  <li>Luo X, Huang L, Han L, Luo Z, Hu F, Tieu R et al. Systematic prioritization and integrative analysis of copy number variations in schizophrenia reveal key schizophrenia susceptibility genes. Schizophr Bull 2014; 40: 1285-1299.</li>
+  <li>Lewis CM, Levinson DF, Wise LH, DeLisi LE, Straub RE, Hovatta I et al. Genome scan meta-analysis of schizophrenia and bipolar disorder, part II: Schizophrenia. Am J Hum Genet 2003; 73: 34-48.</li>
+  <li>Ng MY, Levinson DF, Faraone SV, Suarez BK, DeLisi LE, Arinami T et al. Meta-analysis of 32 genome-wide linkage studies of schizophrenia. Mol Psychiatry 2009; 14: 774-785.</li>
+  <li>Allen NC, Bagade S, McQueen MB, Ioannidis JP, Kavvoura FK, Khoury MJ et al. Systematic meta-analyses and field synopsis of genetic association studies in schizophrenia: the SzGene database. Nat Genet 2008; 40: 827-834.</li>
+  <li>Ayalew M, Le-Niculescu H, Levey DF, Jain N, Changala B, Patel SD et al. Convergent functional genomics of schizophrenia: from comprehensive understanding to genetic risk prediction. Mol Psychiatry 2012; 17: 887-905.</li>
+  <li>Luo X, Huang L, Han L, Luo Z, Hu F, Tieu R et al. Systematic prioritization and integrative analysis of copy number variations in schizophrenia reveal key schizophrenia susceptibility genes. Schizophr Bull 2014; 40: 1285-1299.</li>
+  <li>He X, Fuller CK, Song Y, Meng Q, Zhang B, Yang X et al. Sherlock: detecting gene-disease associations by matching patterns of expression QTL and GWAS. Am J Hum Genet 2013; 92: 667-680.</li>
+  <li>Lamparter D, Marbach D, Rueedi R, Kutalik Z, Bergmann S. Fast and Rigorous Computation of Gene and Pathway Scores from SNP-Based Summary Statistics. PLoS Comput Biol 2016; 12: e1004714.</li>
+  <li>Lanz TA, Joshi JJ, Reinhart V, Johnson K, Grantham LE, 2nd, Volfson D. STEP levels are unchanged in pre-frontal cortex and associative striatum in post-mortem human brain samples from subjects with schizophrenia, bipolar disorder and major depressive disorder. PLoS One 2015; 10: e0121744.</li>
+  <li>Iwamoto K, Bundo M, Kato T. Altered expression of mitochondria-related genes in postmortem brains of patients with bipolar disorder or schizophrenia, as revealed by large-scale DNA microarray analysis. Hum Mol Genet 2005; 14: 241-253.</li>
+  <li>Narayan S, Tang B, Head SR, Gilmartin TJ, Sutcliffe JG, Dean B et al. Molecular profiles of schizophrenia in the CNS at different stages of illness. Brain Res 2008; 1239: 235-248.</li>
+  <li>Chen C, Cheng L, Grennan K, Pibiri F, Zhang C, Badner JA et al. Two gene co-expression modules differentiate psychotics and controls. Mol Psychiatry 2013; 18: 1308-1314.</li>
+  <li>de Baumont A, Maschietto M, Lima L, Carraro DM, Olivieri EH, Fiorini A et al. Innate immune response is differentially dysregulated between bipolar disease and schizophrenia. Schizophr Res 2015; 161: 215-221.</li>
+  <li>Fillman SG, Cloonan N, Catts VS, Miller LC, Wong J, McCrossin T et al. Increased inflammatory markers identified in the dorsolateral prefrontal cortex of individuals with schizophrenia. Mol Psychiatry 2013; 18: 206-214.</li>
+  <li>Willsey AJ, Sanders SJ, Li M, Dong S, Tebbenkamp AT, Muhle RA et al. Coexpression networks implicate human midfetal deep cortical projection neurons in the pathogenesis of autism. Cell 2013; 155: 997-1007.</li>
+  <li>Gulsuner S, Walsh T, Watts AC, Lee MK, Thornton AM, Casadei S et al. Spatial and temporal mapping of de novo mutations in schizophrenia to a fetal prefrontal cortical network. Cell 2013; 154: 518-529.</li>
+  <li>Myers AJ, Gibbs JR, Webster JA, Rohrer K, Zhao A, Marlowe L et al. A survey of genetic human cortical gene expression. Nat Genet 2007; 39: 1494-1499.</li>
+  <li>Purcell S, Neale B, Todd-Brown K, Thomas L, Ferreira MA, Bender D et al. PLINK: a tool set for whole-genome association and population-based linkage analyses. American journal of human genetics 2007; 81: 559-575.</li>
+  <li>Lage K, Karlberg EO, Storling ZM, Olason PI, Pedersen AG, Rigina O et al. A human phenome-interactome network of protein complexes implicated in genetic disorders. Nature biotechnology 2007; 25: 309-316.</li>
+  <li>Lage K, Hansen NT, Karlberg EO, Eklund AC, Roque FS, Donahoe PK et al. A large-scale analysis of tissue-specific pathology and gene expression of human disease genes and complexes. Proceedings of the National Academy of Sciences of the United States of America 2008; 105: 20870-20875.</li>
+  <li>Colantuoni C, Lipska BK, Ye T, Hyde TM, Tao R, Leek JT et al. Temporal dynamics and genetic control of transcription in the human prefrontal cortex. Nature 2011; 478: 519-523.</li>
+  <li>Tang J, Fan Y, Li H et al. Whole-genome sequencing of monozygotic twins discordant for schizophrenia indicates multiple genetic risk factors for schizophrenia. Journal of Genetics and Genomics, accepted manuscript.</li>
+  </ol>
+  </p>
+</div>
+</div>
+  </div>
+
+
+
+<div class="footer ">
+  ©   © Copyright © 2019-2021 Institute of computational biology, Northeast Normal University. All rights reserved.
+</div>
+
+</body>
+
+</html>

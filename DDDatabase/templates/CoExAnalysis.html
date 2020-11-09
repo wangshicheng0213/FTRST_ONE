@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+{% load  staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to DDKB</title>
+    <!-- 引入插件 -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default">
+    <!-- 用个div把他包起来，用来对齐 -->
+      <div class="container">
+          <!-- 用于存放我们网站的logo -->
+          <div class="navbar-header">
+              <a href="index.html" class="navbar-brand"></a>
+          </div>
+          <!-- 这里是list的意思 -->
+          <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav">
+              <ul class="nav navbar-nav">
+               <li><a href="/">Home</a></li>
+                <li><a href="/SearchGene/">GeneSearch</a></li>
+                <li><a href="/CoExAnalysis/">Co-expression</a></li>
+                <li><a href="/PPINetwork/">PPI Network</a></li>
+                <li><a href="/ExPaAnalysis/">Spatio-Temporal-Ex</a></li>
+                <li><a href="/Download/">Download</a></li>
+                <li><a href="/Manual/">Manual</a></li>
+              </ul>
+            </ul>
+          </ul>
+          <!--这里的navbar-right 是向右浮动的意思 -->
+          <!-- <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html">login</a></li>
+            <li><a href="signup.html">signup</a></li>
+          </ul> -->
+      </div>
+  </div>
+<div class="container">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-7 ">
+        <h1 align="center">Co-expression</h1>
+		<form action="co-expression2.php" name="co_expression" id="co_expression" method="post">
+			<table width="80%" align="center" class="search">
+				<tr>
+					<th width="20%">Step 1<br />Input your genes<br>
+						[<a id="sample_batch" onmouseover="change_color('sample_batch')" onmouseout="revert_color('sample_batch')" onclick="sample_batch()" style="color:#3572a7"><u>Example</u></a>]
+					</th>
+					<td>
+						<textarea id="gene" name="gene" rows="6" cols="62" placeholder="Please enter the gene, such as ZNF148(Symbol) or 6833(Entrez Id)"></textarea><br>
+						<!--<font color="red" size="2">e.g. CDC25C, or several genes with one gene per line >= 1.</font><br>-->
+					</td>
+				</tr>
+
+				<tr>
+					<th>Step 2<br />Please select a brain region<sup style="color:#FF0000;">a</sup></th>
+					<td>
+						<select name="tissue">
+							<option value="PFC_MSC" selected="selected">PFC-MSC&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+							<option value="MD_CBC">MD-CBC</option>
+							<option value="STR_AMY">STR-AMY</option>
+							<option value="V1C_STC">V1C-STC</option>
+						</select>
+					</td>
+				</tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+				<tr>
+					<th>Step 3<br/>Please select a developmental stage<sup style="color:#FF0000;">b</sup></th>
+					<td>
+						<select name="stage">
+							<option value="1" selected="selected">Post conception weeks&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+							<option value="2">Infancy to late childhood</option>
+							<option value="3">Adolescence to adulthood</option>
+						</select>
+					</td>
+				</tr>
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+				<tr>
+					<th>Step 4<br />Minimum pearson correlation coefficient</th>
+					<td>
+						<select name="pearson">
+							<option value="0.8" selected="selected">0.8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+							<option value="0.7">0.7</option>
+							<option value="0.75">0.75</option>
+							<option value="0.85">0.85</option>
+							<option value="0.9">0.9</option>
+							<option value="0.95">0.95</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center" valign="middle"><br />
+					<input type="submit" name="submit" id="submit" class=param_input_class value="Submit" >
+					<input type="reset" name="reset" class=param_input_class value="Reset">
+					</td>
+				</tr>
+			</table>
+		</form>
+		<hr>
+      </div>
+      <div class="col-sm-3"  ></div>
+  </div>
+
+
+
+<div class="footer ">
+  © Copyright © 2019-2021 Institute of computational biology, Northeast Normal University. All rights reserved.
+</div>
+
+</body>
+
+</html>

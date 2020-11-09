@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block main %}
+    {% if error_msg %}
+        <p>{{ error_msg }}</p>
+    {% endif %}
+    {% for post in post_list %}
+    {% empty %}
+        <div class="no-post">暂时还没有发布的文章！</div>
+    {% endfor %}
+    {% endblock main %}
+
+</body>
+</html>

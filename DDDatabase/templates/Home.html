@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+{% load  staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to DDKB</title>
+    <!-- 引入插件 -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default">
+    <!-- 用个div把他包起来，用来对齐 -->
+      <div class="container">
+          <!-- 用于存放我们网站的logo -->
+          <div class="navbar-header">
+              <a href="index.html" class="navbar-brand"></a>
+          </div>
+          <!-- 这里是list的意思 -->
+          <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav">
+              <ul class="nav navbar-nav">
+               <li><a href="/">Home</a></li>
+                <li><a href="/SearchGene/">GeneSearch</a></li>
+                <li><a href="/CoExAnalysis/">Co-expression</a></li>
+                <li><a href="/PPINetwork/">PPI Network</a></li>
+                <li><a href="/ExPaAnalysis/">Spatio-Temporal-Ex</a></li>
+                <li><a href="/Download/">Download</a></li>
+                <li><a href="/Manual/">Manual</a></li>
+              </ul>
+            </ul>
+          </ul>
+          <!--这里的navbar-right 是向右浮动的意思 -->
+          <!-- <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html">login</a></li>
+            <li><a href="signup.html">signup</a></li>
+          </ul> -->
+      </div>
+  </div>
+
+<div class="container">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-9">
+          <div class="news-list">
+            <!-- 每一个新闻都用它来表示 -->
+            <div class="news-list-item  clearfix ">
+              <div class="col-xs-12">
+                <blockquote>
+                  <h2>Introduction</h2>
+                </blockquote>
+              </div>
+              <div class="news-list-item clearfix ">
+              <p style="text-align:justify;font-size:16px">
+              Developmental Delay (DD) refers to the phenomenon of slowing down or abnormal sequence in the process of growth and development. Genetic studies, especially the recent genome-wide association study (GWAS), have found a number of DD related mutations (loci). However, how to effectively extract meaningful biological information from the genetic discovery of DD remains a major challenge. There is an urgent need to integrate multi-layer data from different sources, such as genetic discovery from GWAS, the relationship between disease and gene, research network for human genes, protein protein interaction (PPI), co expression, expression of quantitative trait loci (eQTL) and the performance of each gene at different stages, so as to provide comprehensive information for the transformation of genetic discovery into DD molecular diagnosis and mechanism research Combined resources. For this reason, we have developed dddb database, which is the comprehensive resource of DD research.
+              </p>
+            </div>
+
+              <div class="col-xs-12">
+                <blockquote>
+                  <h2>Analysis & Tools</h2>
+                </blockquote>
+              </div>
+            </div>
+            <div class="news-list-item clearfix ">
+              <div class="col-xs-4">
+                <img  src="/static/image/gongju1.png">
+              </div>
+              <div class="col-xs-6">
+                  <a href="#" class="title" style="text-align:justify">Protein protein interaction (PPI) analysis. There is increasing evidence that proteins associated with the same disease are more likely to interact (i.e., correlated guilt).</a>
+                  <div class="info">
+                    <span><span class = "avatar"> <img src="../image/logo.jpg" > </span>DDDB</span> ⋅
+                    <span>Click the above link to enter the tool class</span>
+                  </div>
+              </div>
+            </div>
+            <div class="news-list-item clearfix ">
+              <div class="col-xs-4">
+                <img  src="/static/image/gongju8.png">
+              </div>
+              <div class="col-xs-6">
+                  <a  href="#" class="title" style="text-align:justify">Co expression analysis. In order to explore whether DD risk genes are co expressed in specific brain regions at specific development stages, we used RNA SEQ based expression data from brainspan: Atlas of the developing human brain (http://www.brainspan.org/) to analyze gene co expression.
+</a>
+                  <div class="info">
+                    <span><span class = "avatar"> <img src="/static/image/logo.jpg" > </span>DDDB</span> ⋅
+                    <span>Click the above link to enter the tool class</span>
+                  </div>
+              </div>
+            </div>
+
+            <div class="news-list-item clearfix ">
+              <div class="col-xs-4">
+                <img  src="/static/image/gongju4.png">
+              </div>
+              <div class="col-xs-6">
+                  <a  href="#" class="title" style="text-align:justify">Spatial and temporal expression pattern analysis. The key to elucidate the role of risk genes in the pathogenesis of DD is to understand the spatiotemporal expression pattern of risk genes in the brain.</a>
+                  <div class="info">
+                    <span><span class = "avatar"> <img src="/static/image/logo.jpg" > </span>DDDB</span> ⋅
+                    <span>Click the above link to enter the tool class</span>
+                  </div>
+              </div>
+            </div>
+            <div class="news-list-item clearfix ">
+              <div class="col-xs-4">
+                <img  src="/static/image/gongju6.png">
+              </div>
+              <div class="col-xs-6">
+                  <a  href="#" class="title" style="text-align:justify">Searching for SNP genes: screening SNP data related to stunting in GWAS database for genes to be searched</a>
+                  <div class="info">
+                    <span><span class = "avatar"> <img src="/static/image/logo.jpg" > </span>DDDB</span> ⋅
+                    <span>Click the above link to enter the tool class</span>
+
+                  </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="col-sm-2"></div>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="footer">
+© Copyright © 2019-2021 Institute of computational biology, Northeast Normal University. All rights reserved.
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+{% load  staticfiles %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome to DDKB</title>
+    <!-- 引入插件 -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-default">
+    <!-- 用个div把他包起来，用来对齐 -->
+      <div class="container">
+          <!-- 用于存放我们网站的logo -->
+          <div class="navbar-header">
+              <a href="index.html" class="navbar-brand"></a>
+          </div>
+          <!-- 这里是list的意思 -->
+          <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav">
+              <ul class="nav navbar-nav">
+               <li><a href="/">Home</a></li>
+                <li><a href="/SearchGene/">GeneSearch</a></li>
+                <li><a href="/CoExAnalysis/">Co-expression</a></li>
+                <li><a href="/PPINetwork/">PPI Network</a></li>
+                <li><a href="/ExPaAnalysis/">Spatio-Temporal-Ex</a></li>
+                <li><a href="/Download/">Download</a></li>
+                <li><a href="/Manual/">Manual</a></li>
+              </ul>
+            </ul>
+          </ul>
+          <!--这里的navbar-right 是向右浮动的意思 -->
+          <!-- <ul class="nav navbar-nav navbar-right">
+            <li><a href="login.html">login</a></li>
+            <li><a href="signup.html">signup</a></li>
+          </ul> -->
+      </div>
+  </div>
+
+<div class="container">
+  <div class="col-md-8">
+    <div id="link">
+		<br />
+		<font style="color:#3572a7;font-size:200%;font-weight:bold;">Manual</font>
+		<hr>
+		<ol type="A">
+			<li><a href="#search">Search</a></li>
+				<ol type="a">
+					<li><a href="#searchsnp">Search SNP</a></li>
+					<li><a href="#searchgene">Search Gene</a></li>
+				</ol>
+			<li><a href="#analysis">Analysis & Tools</a></li>
+				<ol type="a">
+					<li><a href="#coexpression">Co-expression analysis</a></li>
+					<!-- <li><a href="#brainspan">Expression pattern analysis (BrainSpan)</a></li> -->
+					<li><a href="#braincloud">Expression pattern analysis (BrainCloud)</a></li>
+					<li><a href="#ppi">Protein protein interaction analysis</a></li>
+					<!-- <li><a href="#locuszoom">Association study analysis</a></li> -->
+					<li><a href="#eqtl">eQTL analysis</a></li>
+				</ol>
+			<!-- <li><a href="#gene">Genes</a></li>
+				<ol type="a">
+					<!-<li href="#cnv">Genes affected by CNV</li>
+					<li href="#gwas">Genes identified by GWAS</li>
+					<li href="#cfg">Genes identified by CFG</li>
+					<li href="#linkage">Genes identified by linkage & association study</li>
+					<li href="#sherlock">Genes identified by Sherlock integrative analysis</li>-->
+					<!-- <li><a href="#pascal">Genes identified by PASCAL</a></li> -->
+					<!-- <li><a href="#differential">Genes expressed differentially in SZ</a></li>
+				</ol>  -->
+			<!--<li href="#gbrowse">gBrowse</li>-->
+		<!-- </ol> -->
+	</div>
+
+	<div class="manual1">
+		<a name="search"></a><h3>Search</h3>
+		<div class="manual2">
+			<a name="searchsnp"></a><h4>Search SNP</h4>
+			<p class="manualtext" align="justify">
+			In this module, users can search SNP by <strong>rsid</strong>, <strong>gene symbol</strong> and select a <strong>Minimum <I>P</I>-value</strong> of a SNP.
+			For example, if users input some SNPs (one SNP per line) and clik "search" button, they will get the results by rsid. But if users input
+			some genes (also one gene per line), they will get results of those SNPs in input genes. Last, if users also select a minimum <I>P</I>-value, they will
+			get the results with <I>P</I>-value less than they select.
+			</p>
+			<center><img src="images/snp.png" border="0" width="800"></center>
+			<center> <b>Figure 1</b> Options for SNP search and SNP search result.</center><br>
+		</div>
+		<div class="manual2">
+			<a name="searchgene"></a><h4>Search Gene</h4>
+			<p class="manualtext" align="justify">
+			In this module, users can search gene by the <strong>source</strong>of gene, <strong>gene symbol</strong> or <strong>Entrez Id</strong>. For example,
+			if users select one or more gene sources and click "search" button, they will get gene results with they select gene sources. Users can also search genes by inputing their
+			interested genes and select interested gene sources.
+			</p>
+			<center><img src="images/gene.png" border="0" width="800"></center>
+			<center> <b>Figure 2</b> Options for gene search and gene search result.</center><br>
+		</div>
+	</div>
+	<div class="manual1">
+		<a name="analysis"></a><h3>Analysis & Tools</h3>
+		<div class="manual2">
+			<a name="coexpression"></a><h4>Co-expression analysis</h4>
+			<p class="manualtext" align="justify">
+			In this module, users need to do the following 4 steps: 1. Input genes (one gene per line); 2. Select a brain region; 3. Select a developmental stage; 4. Select a minimum <I>P</I>-value.
+			</p>
+			<center><img src="images/co-expression.png" border="0" width="800"></center>
+			<center> <b>Figure 3</b> Options for Co-expression analysis and analysis result.</center><br>
+		</div>
+		<!-- <div class="manual2">
+			<a name="brainspan"></a><h4>Expression pattern analysis (BrainSpan)</h4>
+			<p class="manualtext" align="justify">
+			In this module, users need to do the following 2 steps: 1. Input genes (one gene per line); 2. Select a brain region.
+			</p>
+			<center><img src="images/brainspan.png" border="0" width="800"></center>
+			<center> <b>Figure 4</b> Options for BrainSpan expression analysis and analysis result.</center><br>
+		</div> -->
+		<div class="manual2">
+			<a name="braincloud"></a><h4>Expression pattern analysis (BrainCloud)</h4>
+			<p class="manualtext" align="justify">
+			In this module, users only need to input interested genes (one gene per line).
+			</p>
+			<center><img src="images/braincloud.png" border="0" width="800"></center>
+			<center> <b>Figure 5</b> Options for BrainCloud expression analysis and analysis result.</center><br>
+		</div>
+		<div class="manual2">
+			<a name="ppi"></a><h4>Protein protein interaction analysis</h4>
+			<p class="manualtext" align="justify">
+			In this module, users only need to input interested genes (one gene per line).
+			</p>
+			<center><img src="images/ppi.png" border="0" width="800"></center>
+			<center> <b>Figure 6</b> Options for protein-protein interaction analysis and analysis result.</center><br>
+		</div>
+		<div class="manual2">
+			<a name="locuszoom"></a><h4>Association study analysis</h4>
+			<p class="manualtext" align="justify">
+			In this module, users can select different mode to generate a regional association plot.
+			If users select SNP tab, they should supply a rsid, a flanking size and select a 1000 Genomes population.
+			If users select gene tab, they should supply a gene name, a flanking size and select a 1000 Genomes population. Index SNP and title is optional.
+			If users select region tab, they should select a chromosome, input start position, end position and select a 1000 Genomes population. Index SNP and title is optional.
+			</p>
+			<center><img src="images/locuszoom.png" border="0" width="800"></center>
+			<center> <b>Figure 7</b> Options for regional association study analysis and analysis result.</center><br>
+		</div>
+		<div class="manual2">
+			<a name="eqtl"></a><h4>eQTL analysis</h4>
+			<p class="manualtext" align="justify">
+			In this module, users need to input interested genes (one gene per line) or interested SNP (one SNP per line) and select a Minimum <I>P</I>-value.
+			</p>
+			<center><img src="images/eqtl.png" border="0" width="800"></center>
+			<center> <b>Figure 8</b> Options for eQTL analysis and analysis result.</center><br>
+		</div>
+	</div>
+	<!-- <div class="manual1">
+		<a name="gene"></a><h3>Genes</h3>
+		<div class="manual2">
+			<a name="pascal"></a><h4>Genes identified by <I>Pascal</I></h4>
+			<p class="manualtext" align="justify">
+			Like regional association study, user can select two modes to search pascal genes. If users select <strong>Gene tab</strong>, they can
+			input position or minimum <I>P</I>-value or gene names (one gene per line). The input options also suit for the <strong>Fusion Gene</strong> tab.
+			</p>
+			<center><img src="images/pascal.png" border="0" width="800"></center>
+			<center> <b>Figure 9</b> Options for <I>Pascal</I> and <I>Pascal</I> result.</center><br>
+		</div> -->
+		<!-- <div class="manual2">
+			<a name="differential"></a><h4>Genes expressed differentially in SZ</h4>
+			<p class="manualtext" align="justify">
+			In this module, users need to do the following two things, input genes (one gene per line) and select a dataset. In the results page, users can download the boxplot or box the wanted area for magnification.
+			</p>
+			<center><img src="images/differential.png" border="0" width="800"></center>
+			<center> <b>Figure 10</b> Options for differential expression and result.</center><br>
+		</div> -->
+	</div>
+	<!-- <div id="ciation">
+			<p><br />Citation: Yong Wu, Yong-Gang Yao and Xiong-Jian Luo. <a href="https://academic.oup.com/schizophreniabulletin/article/43/2/459/2503611/SZDB-A-Database-for-Schizophrenia-Genetic-Research">SZDB: A Database for Schizophrenia Genetic Research</a>. Schizophrenia Bulletin (2017) 43 (2): 459-471.
+	</div> -->
+
+	</div>
+
+
+
+
+<div class="footer ">
+© Copyright © 2019-2021 Institute of computational biology, Northeast Normal University. All rights reserved.
+</div>
+
+
+</body>
+
+</html>
